@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "arsam.net — AI-first arsa marketplace",
+  "short_name": "arsam.net",
+  "description": "AI-first, mobile-first arsa marketplace platform for Turkey.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0a0a14",
+  "background_color": "#0a0a14",
+  "lang": "tr",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "real-estate"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Arama",
+      "url": "/search",
+      "description": "Arsa ara"
+    },
+    {
+      "name": "Harita",
+      "url": "/map",
+      "description": "Tam ekran harita modu"
+    },
+    {
+      "name": "AI Değerleme",
+      "url": "/tools/valuation",
+      "description": "AI ile arsa değerleme"
+    }
+  ]
+}
