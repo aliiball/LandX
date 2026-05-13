@@ -3,6 +3,7 @@ import { PERSONA_USER_FIXTURES } from '@/mocks/seed/personas';
 import type { HttpHandler } from 'msw';
 import { http, HttpResponse, delay } from 'msw';
 import { listingHandlers } from './listings';
+import { messagingHandlers } from './messaging';
 
 // Handlers grow phase-by-phase.
 
@@ -23,4 +24,4 @@ const baseHandlers: HttpHandler[] = [
   }),
 ];
 
-export const handlers: HttpHandler[] = [...baseHandlers, ...listingHandlers];
+export const handlers: HttpHandler[] = [...baseHandlers, ...listingHandlers, ...messagingHandlers];

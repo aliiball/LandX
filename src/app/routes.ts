@@ -21,9 +21,29 @@ export default [
     route('b/:slug', 'b.$slug/page.tsx'),
   ]),
 
-  layout('(auth)/_layout.tsx', [route('login', '(auth)/login/page.tsx')]),
+  layout('(auth)/_layout.tsx', [
+    route('login', '(auth)/login/page.tsx'),
+    route('register', '(auth)/register/page.tsx'),
+    route('forgot', '(auth)/forgot/page.tsx'),
+    route('reset', '(auth)/reset/page.tsx'),
+    route('verify', '(auth)/verify/page.tsx'),
+    route('passkey-setup', '(auth)/passkey-setup/page.tsx'),
+  ]),
 
-  ...prefix('dashboard', [layout('dashboard/_layout.tsx', [index('dashboard/page.tsx')])]),
+  ...prefix('dashboard', [
+    layout('dashboard/_layout.tsx', [
+      index('dashboard/page.tsx'),
+      route('listings', 'dashboard/listings/page.tsx'),
+      route('favorites', 'dashboard/favorites/page.tsx'),
+      route('alerts', 'dashboard/alerts/page.tsx'),
+      route('messages', 'dashboard/messages/page.tsx'),
+      route('ai', 'dashboard/ai/page.tsx'),
+      route('security', 'dashboard/security/page.tsx'),
+      route('profile', 'dashboard/profile/page.tsx'),
+      route('billing', 'dashboard/billing/page.tsx'),
+      route('kyc', 'dashboard/kyc/page.tsx'),
+    ]),
+  ]),
 
   ...prefix('broker', [layout('broker/_layout.tsx', [index('broker/page.tsx')])]),
 
