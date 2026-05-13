@@ -188,12 +188,7 @@ export default function SearchPage() {
           {isLoading ? (
             <div className="grid gap-3 sm:grid-cols-2">
               {Array.from({ length: 6 }).map((_, i) => (
-                <Skeleton
-                  // eslint-disable-next-line react/no-array-index-key
-                  key={i}
-                  variant="rect"
-                  height={280}
-                />
+                <Skeleton key={i} variant="rect" height={280} />
               ))}
             </div>
           ) : data?.items.length ? (

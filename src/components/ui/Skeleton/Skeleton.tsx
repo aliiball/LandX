@@ -35,7 +35,6 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(function Skele
       >
         {Array.from({ length: lines }).map((_, i) => (
           <div
-            // eslint-disable-next-line react/no-array-index-key
             key={i}
             className={cn(BASE, VARIANT_CLASS.text)}
             style={{

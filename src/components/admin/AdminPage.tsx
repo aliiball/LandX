@@ -102,7 +102,6 @@ export function AdminTable({
           </thead>
           <tbody>
             {rows.map((row, idx) => (
-              // eslint-disable-next-line react/no-array-index-key
               <tr key={idx} className="border-b border-[var(--stroke-subtle)]/40">
                 {columns.map((c) => (
                   <td

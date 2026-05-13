@@ -79,12 +79,7 @@ export function Pagination({
       <ul className="hidden items-center gap-1 sm:flex">
         {pages.map((p, i) =>
           p === 'ellipsis' ? (
-            <li
-              // eslint-disable-next-line react/no-array-index-key
-              key={`ell-${i}`}
-              className="px-2 text-[var(--text-tertiary)]"
-              aria-hidden
-            >
+            <li key={`ell-${i}`} className="px-2 text-[var(--text-tertiary)]" aria-hidden>
               …
             </li>
           ) : (

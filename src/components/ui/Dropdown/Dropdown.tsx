@@ -100,7 +100,6 @@ export function Dropdown({ trigger, items, align = 'end', className }: DropdownP
         >
           {items.map((item, idx) => {
             if (item === 'separator') {
-              // eslint-disable-next-line react/no-array-index-key
               return <hr key={`sep-${idx}`} className="my-1 border-[var(--stroke-subtle)]" />;
             }
             const actionIdx = actionableItems.indexOf(item);
