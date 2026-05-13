@@ -76,7 +76,7 @@ export function Pagination({
       >
         Önceki
       </Button>
-      <ul className="hidden items-center gap-1 sm:flex" role="list">
+      <ul className="hidden items-center gap-1 sm:flex">
         {pages.map((p, i) =>
           p === 'ellipsis' ? (
             <li

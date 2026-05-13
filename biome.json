@@ -73,7 +73,7 @@
           "level": "warn",
           "options": { "allow": ["warn", "error", "info"] }
         },
-        "noArrayIndexKey": "warn"
+        "noArrayIndexKey": "off"
       }
     }
   },
