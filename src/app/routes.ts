@@ -63,7 +63,26 @@ export default [
     ]),
   ]),
 
-  ...prefix('admin', [layout('admin/_layout.tsx', [index('admin/page.tsx')])]),
+  ...prefix('admin', [
+    layout('admin/_layout.tsx', [
+      index('admin/page.tsx'),
+      route('tenants', 'admin/tenants/page.tsx'),
+      route('users', 'admin/users/page.tsx'),
+      route('roles', 'admin/roles/page.tsx'),
+      route('plugins', 'admin/plugins/page.tsx'),
+      route('doctypes', 'admin/doctypes/page.tsx'),
+      route('migrations', 'admin/migrations/page.tsx'),
+      route('hooks', 'admin/hooks/page.tsx'),
+      route('config', 'admin/config/page.tsx'),
+      route('api', 'admin/api/page.tsx'),
+      route('workflows', 'admin/workflows/page.tsx'),
+      route('audit', 'admin/audit/page.tsx'),
+      route('pii', 'admin/pii/page.tsx'),
+      route('compliance', 'admin/compliance/page.tsx'),
+      route('slo', 'admin/slo/page.tsx'),
+      route('security/reviews', 'admin/security.reviews/page.tsx'),
+    ]),
+  ]),
 
   ...prefix('agent', [layout('agent/_layout.tsx', [index('agent/page.tsx')])]),
 ] satisfies RouteConfig;
