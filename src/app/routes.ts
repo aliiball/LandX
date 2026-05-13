@@ -84,5 +84,19 @@ export default [
     ]),
   ]),
 
-  ...prefix('agent', [layout('agent/_layout.tsx', [index('agent/page.tsx')])]),
+  ...prefix('agent', [
+    layout('agent/_layout.tsx', [
+      index('agent/page.tsx'),
+      route('mcp', 'agent/mcp/page.tsx'),
+      route('tools', 'agent/tools/page.tsx'),
+      route('agents', 'agent/agents/page.tsx'),
+      route('memory', 'agent/memory/page.tsx'),
+      route('vectors', 'agent/vectors/page.tsx'),
+      route('prompts', 'agent/prompts/page.tsx'),
+      route('providers', 'agent/providers/page.tsx'),
+      route('observability', 'agent/observability/page.tsx'),
+      route('workflows', 'agent/workflows/page.tsx'),
+      route('conversations', 'agent/conversations/page.tsx'),
+    ]),
+  ]),
 ] satisfies RouteConfig;
