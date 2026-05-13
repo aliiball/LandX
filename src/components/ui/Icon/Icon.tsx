@@ -2,7 +2,7 @@ import { cn } from '@/design/recipes';
 import type { LucideIcon, LucideProps } from 'lucide-react';
 import { forwardRef } from 'react';
 
-export type IconSize = 12 | 16 | 20 | 24 | 32;
+export type IconSize = 12 | 14 | 16 | 18 | 20 | 24 | 28 | 32 | 40 | 48;
 
 export type IconTone =
   | 'primary'

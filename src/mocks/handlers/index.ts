@@ -2,11 +2,11 @@ import type { PersonaKey } from '@/lib/auth/personas';
 import { PERSONA_USER_FIXTURES } from '@/mocks/seed/personas';
 import type { HttpHandler } from 'msw';
 import { http, HttpResponse, delay } from 'msw';
+import { listingHandlers } from './listings';
 
-// Phase 0 ships with a tiny handler set — enough to prove the worker boots and
-// `/api/me` reflects the active persona. More handlers land per phase.
+// Handlers grow phase-by-phase.
 
-export const handlers: HttpHandler[] = [
+const baseHandlers: HttpHandler[] = [
   http.get('/api/health', async () => {
     await delay(50);
     return HttpResponse.json({ status: 'ok', mode: 'msw-mock', ts: Date.now() });
@@ -22,3 +22,5 @@ export const handlers: HttpHandler[] = [
     return HttpResponse.json(PERSONA_USER_FIXTURES[personaKey]);
   }),
 ];
+
+export const handlers: HttpHandler[] = [...baseHandlers, ...listingHandlers];
