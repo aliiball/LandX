@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+dist-demo/
+build/
+.vite/
+.react-router/
+.tsbuildinfo/
+
+# Environment files (never commit)
+.env
+.env.local
+.env.*.local
+
+# Claude Code local overrides (settings.json is committed; local override is gitignored)
+.claude/settings.local.json
+.claude/cache/
+.claude/
+
+# Test artifacts
+playwright-report/
+test-results/
+coverage/
+.nyc_output/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Cache
+.cache/
+.turbo/
+
+# Generated
+src/i18n/typings.ts

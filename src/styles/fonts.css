@@ -1,0 +1,19 @@
+/* Self-hosted fonts — PROMPT §2.2 mandates Geist + JetBrains Mono (no Google Fonts) */
+/* woff2 files are placed in /public/fonts/ during Phase 0 bootstrap */
+/* Fallback to system-ui if files missing during initial bootstrap — replace with real files via scripts/fetch-fonts.mjs */
+
+@font-face {
+  font-family: "Geist Variable";
+  src: url("/fonts/geist-variable.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono Variable";
+  src: url("/fonts/jetbrains-mono-variable.woff2") format("woff2-variations");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}

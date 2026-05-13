@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "search": "Search",
+    "listings": "Listings",
+    "dashboard": "Dashboard",
+    "broker": "Broker",
+    "admin": "Admin",
+    "agent": "Agent",
+    "login": "Log in",
+    "register": "Sign up"
+  },
+  "footer": {
+    "copyright": "© {{year}} arsam.net · powered by LandX",
+    "kvkk": "Privacy (KVKK)",
+    "cookies": "Cookie Preferences"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error.",
+    "notFound": "Not found."
+  },
+  "placeholder": {
+    "surfaceLabel": "Surface",
+    "workInProgressTitle": "This page is part of the Phase 0 scaffold.",
+    "workInProgressBody": "Real content lands in later phases. Use the Persona Switcher to jump between surfaces (Ctrl+Shift+P).",
+    "cta": "Coming soon"
+  },
+  "persona": {
+    "switch": "Switch persona",
+    "demoMode": "Demo Mode"
+  }
+}

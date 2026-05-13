@@ -1,0 +1,94 @@
+/* LandX / arsam.net — Obsidian Grid design tokens */
+/* Source of truth: PROMPT.md §2.1 */
+
+:root {
+  /* Surface — koyu cam katmanları */
+  --surface-void: oklch(0.12 0.012 260);
+  --surface-obsidian: oklch(0.16 0.015 260);
+  --surface-slate: oklch(0.2 0.018 260);
+  --surface-elevated: oklch(0.24 0.02 260);
+  --surface-glass: oklch(0.2 0.018 260 / 0.55);
+  --surface-glass-strong: oklch(0.24 0.02 260 / 0.72);
+
+  /* Stroke — ince konturlar */
+  --stroke-subtle: oklch(0.3 0.02 260 / 0.4);
+  --stroke-default: oklch(0.38 0.025 260 / 0.55);
+  --stroke-strong: oklch(0.5 0.03 260 / 0.7);
+  --stroke-neon: oklch(0.78 0.18 175);
+
+  /* Text */
+  --text-primary: oklch(0.97 0.005 260);
+  --text-secondary: oklch(0.78 0.01 260);
+  --text-tertiary: oklch(0.58 0.015 260);
+  --text-disabled: oklch(0.42 0.015 260);
+
+  /* Accents — neon vurgular */
+  --accent-cyan: oklch(0.82 0.16 195);
+  --accent-lime: oklch(0.88 0.2 135);
+  --accent-magenta: oklch(0.72 0.25 340);
+  --accent-amber: oklch(0.82 0.16 75);
+  --accent-violet: oklch(0.7 0.22 290);
+
+  /* Semantic */
+  --success: var(--accent-lime);
+  --warning: var(--accent-amber);
+  --danger: oklch(0.68 0.22 25);
+  --info: var(--accent-cyan);
+
+  /* Glow */
+  --glow-cyan: 0 0 0 1px oklch(0.82 0.16 195 / 0.5), 0 0 24px -4px oklch(0.82 0.16 195 / 0.45);
+  --glow-violet: 0 0 0 1px oklch(0.7 0.22 290 / 0.5), 0 0 28px -4px oklch(0.7 0.22 290 / 0.45);
+  --glow-soft: 0 0 32px -8px oklch(0.82 0.16 195 / 0.25);
+
+  /* Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Motion (PROMPT §2.4) */
+  --ease-out-expo: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-micro: 120ms;
+  --duration-small: 200ms;
+  --duration-medium: 320ms;
+  --duration-layout: 480ms;
+  --duration-scene: 720ms;
+
+  /* Type scale */
+  --font-display: "Geist Variable", "Geist", system-ui, sans-serif;
+  --font-body: "Geist Variable", "Geist", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+
+  --text-caption: 11px;
+  --text-small: 13px;
+  --text-body: 15px;
+  --text-lead: 17px;
+  --text-h6: 18px;
+  --text-h5: 21px;
+  --text-h4: 26px;
+  --text-h3: 33px;
+  --text-h2: 42px;
+  --text-h1: 54px;
+  --text-display: 72px;
+}
+
+/* Light mode opsiyonel — admin için ileri faz */
+[data-theme="light"] {
+  /* reserved */
+}

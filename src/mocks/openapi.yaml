@@ -1,0 +1,15 @@
+openapi: 3.1.0
+info:
+  title: LandX / arsam.net Mock API
+  version: 0.1.0
+  description: |
+    Mock-first OpenAPI draft for LandX frontend. Grows phase-by-phase.
+    Backend (FastAPI S01 Auto REST API Engine) will provide the real implementation.
+servers:
+  - url: http://localhost:5173/api
+    description: MSW worker (browser-side)
+  - url: https://staging.arsam.net/api
+    description: Staging (future)
+paths: {}
+components:
+  schemas: {}

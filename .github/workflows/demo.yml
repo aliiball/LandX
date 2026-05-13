@@ -1,0 +1,59 @@
+name: Deploy Demo to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '9.15.0'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm exec msw init public/ --save
+
+      - name: Compute base path from repo name
+        id: base
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          echo "path=/${REPO_NAME}/" >> "$GITHUB_OUTPUT"
+
+      - name: Build demo
+        env:
+          VITE_DEMO_MODE: 'true'
+          VITE_ROUTER_MODE: 'hash'
+          VITE_BASE_PATH: ${{ steps.base.outputs.path }}
+        run: pnpm build:demo
+
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/client
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

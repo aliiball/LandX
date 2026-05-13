@@ -1,0 +1,77 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignore": [
+      "node_modules/**",
+      "build/**",
+      "dist/**",
+      "playwright-report/**",
+      "test-results/**",
+      "coverage/**",
+      ".react-router/**",
+      "public/mockServiceWorker.js",
+      "src/i18n/typings.ts"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "lineEnding": "lf"
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "double",
+      "semicolons": "always",
+      "trailingCommas": "all",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false
+    }
+  },
+  "json": {
+    "formatter": {
+      "trailingCommas": "none"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "error",
+        "noConsole": {
+          "level": "warn",
+          "options": { "allow": ["warn", "error", "info"] }
+        }
+      },
+      "style": {
+        "noDefaultExport": "off",
+        "useImportType": "error",
+        "useExportType": "error",
+        "useNamingConvention": "off"
+      },
+      "complexity": {
+        "noBannedTypes": "error",
+        "noForEach": "off"
+      },
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error"
+      },
+      "a11y": {
+        "recommended": true,
+        "useButtonType": "error",
+        "useKeyWithClickEvents": "error"
+      }
+    }
+  },
+  "overrides": []
+}

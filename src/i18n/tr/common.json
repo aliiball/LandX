@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "search": "Ara",
+    "listings": "İlanlar",
+    "dashboard": "Panel",
+    "broker": "Emlakçı",
+    "admin": "Yönetim",
+    "agent": "Agent",
+    "login": "Giriş",
+    "register": "Kayıt"
+  },
+  "footer": {
+    "copyright": "© {{year}} arsam.net · LandX powered",
+    "kvkk": "KVKK",
+    "cookies": "Çerez Tercihleri"
+  },
+  "errors": {
+    "generic": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+    "network": "Ağ bağlantısı hatası.",
+    "notFound": "Bulunamadı."
+  },
+  "placeholder": {
+    "surfaceLabel": "Yüzey",
+    "workInProgressTitle": "Bu sayfa Phase 0 iskeletinin parçasıdır.",
+    "workInProgressBody": "Gerçek içerik ilerleyen fazlarda eklenecek. Persona Switcher ile diğer yüzeylere geçiş yapabilirsiniz (Ctrl+Shift+P).",
+    "cta": "Yakında"
+  },
+  "persona": {
+    "switch": "Persona değiştir",
+    "demoMode": "Demo Modu"
+  }
+}
