@@ -5,7 +5,10 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
-  const isDemo = env.VITE_DEMO_MODE === 'true';
+  // VITE_DEMO_MODE: default ON for dev + demo build; CI production check sets `false`.
+  // This way `pnpm dev` (no env) and `pnpm e2e` show PersonaSwitcher; tree-shake check
+  // for production build still works when explicit `false` is passed.
+  const isDemo = env.VITE_DEMO_MODE === 'false' ? false : true;
   const routerMode = (env.VITE_ROUTER_MODE ?? 'browser') as 'browser' | 'hash';
   // Base path for asset URLs.
   //   - Default `/` works for root deploy (custom domain, user/org GH Pages, localhost).

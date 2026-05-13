@@ -90,4 +90,9 @@ export const PERSONA_ORDER: readonly PersonaKey[] = [
 
 export const DEFAULT_PERSONA: PersonaKey = 'buyer';
 
-export const SESSION_STORAGE_KEY = 'landx_demo_persona';
+// Conditional so the literal string is dead-code-eliminated in production builds
+// (VITE_DEMO_MODE=false). Vite `define` replaces VITE_DEMO_MODE → esbuild folds
+// the ternary → empty string remains. Demo builds keep the real key.
+export const SESSION_STORAGE_KEY = import.meta.env.VITE_DEMO_MODE
+  ? 'landx_demo_persona'
+  : '';
