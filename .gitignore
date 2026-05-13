@@ -1,49 +1,115 @@
-# Dependencies
+# ====================================================
+# LandX / arsam.net — .gitignore
+# ====================================================
+
+# --- Dependencies ---
 node_modules/
 .pnpm-store/
+jspm_packages/
 
-# Build outputs
+# --- Build outputs ---
 dist/
 dist-demo/
 build/
 .vite/
 .react-router/
 .tsbuildinfo/
+*.tsbuildinfo
 
-# Environment files (never commit)
+# --- Environment files (never commit) ---
+# .env.example IS committed — others are local secrets.
 .env
 .env.local
+.env.development
+.env.development.local
+.env.production
+.env.production.local
 .env.*.local
 
-# Claude Code local overrides (settings.json is committed; local override is gitignored)
+# --- Claude Code workspace ---
+# The user opted to gitignore .claude/ entirely. Agents/commands/settings
+# remain locally only. .mcp.json (repo root) is NOT in .claude/ and IS committed.
 .claude/settings.local.json
 .claude/cache/
 .claude/
 
-# Test artifacts
+# --- Test artifacts ---
 playwright-report/
 test-results/
 coverage/
 .nyc_output/
+.vitest-cache/
 
-# IDE
+# --- IDE / Editor ---
 .vscode/
+.vscode-test/
 .idea/
+.fleet/
+.zed/
+.history/
 *.swp
 *.swo
+*.swn
+*.sublime-project
+*.sublime-workspace
 
-# OS
+# --- OS ---
 .DS_Store
+.AppleDouble
+.LSOverride
 Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# Logs
+# --- Logs ---
 *.log
 npm-debug.log*
 pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
 
-# Cache
+# --- Cache ---
 .cache/
 .turbo/
+.parcel-cache/
+.eslintcache
+.stylelintcache
 
-# Generated
+# --- Source artifacts ---
 src/i18n/typings.ts
+
+# --- Misc / Personal reference files (not part of the codebase) ---
+LandX_Modülleri.xlsx
+*.xlsx
+*.xls
+*.docx
+*.doc
+*.pdf
+notes/
+scratch/
+TODO.local.md
+NOTES.local.md
+
+# --- Archives ---
+*.tgz
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# --- Lock files for other package managers (we use pnpm) ---
+package-lock.json
+yarn.lock
+
+# --- Locally generated test outputs ---
+playwright/.cache/
+playwright-screenshots/
+__screenshots__/
+
+# --- Local secrets ---
+*.pem
+*.key
+*.crt
+.secrets/
+GITHUB_PAT

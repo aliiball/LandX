@@ -7,8 +7,14 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   const isDemo = env.VITE_DEMO_MODE === 'true';
   const routerMode = (env.VITE_ROUTER_MODE ?? 'browser') as 'browser' | 'hash';
+  // Base path for asset URLs.
+  //   - Default `/` works for root deploy (custom domain, user/org GH Pages, localhost).
+  //   - For GH Pages PROJECT page (https://user.github.io/repo/), set
+  //     `VITE_BASE_PATH=/repo/` before `pnpm build:demo`.
+  const base = env.VITE_BASE_PATH || '/';
 
   return {
+    base,
     plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
     server: {
       port: 5173,

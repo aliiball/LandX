@@ -14,6 +14,34 @@ pnpm exec msw init public/ --save
 pnpm dev           # → http://localhost:5173
 ```
 
+## Deploy to GitHub Pages
+
+The `.github/workflows/demo.yml` workflow auto-deploys on every push to `main`.
+
+**Auto-setup:**
+1. Push the repo to GitHub.
+2. Settings → Pages → Source: **GitHub Actions**.
+3. Push to `main` → workflow builds with `VITE_BASE_PATH=/<repo-name>/` (auto-computed),
+   runs `pnpm build:demo`, deploys `build/client/` to Pages.
+4. Visit `https://<user>.github.io/<repo>/` — hash-routed SPA with all 53 routes.
+
+**Manual deploy** (any host):
+
+```bash
+# Root path (custom domain or user/org page)
+pnpm build:demo
+# Output in build/client/ — upload to S3, Netlify, GH Pages user page, etc.
+
+# Project page (https://user.github.io/repo-name/)
+VITE_BASE_PATH=/repo-name/ pnpm build:demo
+```
+
+What the build produces:
+- `build/client/index.html` + `build/client/404.html` (SPA fallback)
+- `build/client/.nojekyll` (prevents GH Pages Jekyll processing)
+- All asset paths prefixed via Vite `base` config
+- Hash routing — deep links work (`#/listing/lst_00001`, `#/broker/leads`, etc.)
+
 ## Scripts
 
 | Script | Purpose |

@@ -17,8 +17,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="theme-color" content="#0a0a14" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <link rel="manifest" href="/manifest.webmanifest" />
-        <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+        <link rel="manifest" href={`${import.meta.env.BASE_URL}manifest.webmanifest`} />
+        <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}icons/icon.svg`} />
         <Meta />
         <Links />
       </head>
