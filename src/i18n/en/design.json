@@ -1,0 +1,52 @@
+{
+  "title": "Design System — Obsidian Grid",
+  "subtitle": "Live catalog of every primitive. Click, interact, verify.",
+  "sections": {
+    "tokens": "Tokens",
+    "buttons": "Buttons",
+    "inputs": "Inputs",
+    "toggles": "Toggles",
+    "cards": "Cards",
+    "badges": "Badges",
+    "overlays": "Overlays",
+    "feedback": "Feedback",
+    "navigation": "Navigation",
+    "ai": "AI",
+    "form": "Form"
+  },
+  "toast": {
+    "default": "General notification",
+    "success": "Listing published successfully",
+    "error": "Error: Connection failed",
+    "info": "New feature available",
+    "warning": "Document review pending",
+    "agent": "AI response ready",
+    "system": "System maintenance window ended"
+  },
+  "modal": {
+    "title": "Publish Listing",
+    "description": "On mobile (<md viewport) this modal auto-converts to a bottom sheet.",
+    "body": "Modal body content. Close via ESC or click backdrop."
+  },
+  "form": {
+    "title": "Demo Listing Form",
+    "name": "Name",
+    "namePlaceholder": "John Doe",
+    "email": "Email",
+    "emailPlaceholder": "example@arsam.net",
+    "role": "Role",
+    "rolePicker": "Choose…",
+    "roles": {
+      "buyer": "Buyer",
+      "seller": "Seller",
+      "broker": "Broker"
+    },
+    "bio": "Short bio",
+    "bioPlaceholder": "2-3 sentences about yourself…",
+    "agree": "I read the KVKK consent text",
+    "subscribe": "Notify me of new listings",
+    "submit": "Save",
+    "successTitle": "Form submitted",
+    "successDescription": "All fields processed as mock. Toast pipeline works."
+  }
+}

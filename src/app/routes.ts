@@ -6,6 +6,7 @@ import { type RouteConfig, index, layout, prefix, route } from '@react-router/de
 export default [
   layout('(public)/_layout.tsx', [
     index('(public)/page.tsx'),
+    route('design', '(public)/design/page.tsx'),
     route('b/:slug', 'b.$slug/page.tsx'),
   ]),
 

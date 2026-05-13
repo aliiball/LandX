@@ -1,0 +1,52 @@
+{
+  "title": "Design System — Obsidian Grid",
+  "subtitle": "Tüm primitive bileşenlerin canlı kataloğu. Tıkla, etkileşime gir, kontrol et.",
+  "sections": {
+    "tokens": "Tokens",
+    "buttons": "Buttons",
+    "inputs": "Inputs",
+    "toggles": "Toggles",
+    "cards": "Cards",
+    "badges": "Badges",
+    "overlays": "Overlays",
+    "feedback": "Feedback",
+    "navigation": "Navigation",
+    "ai": "AI",
+    "form": "Form"
+  },
+  "toast": {
+    "default": "Genel bildirim",
+    "success": "İlan başarıyla yayınlandı",
+    "error": "Hata: Bağlantı başarısız",
+    "info": "Yeni özellik mevcut",
+    "warning": "Belge inceleme bekliyor",
+    "agent": "AI yanıt hazır",
+    "system": "Sistem bakım modu sonlandı"
+  },
+  "modal": {
+    "title": "İlan Yayınla",
+    "description": "Bu modal mobile <md viewport'ta otomatik olarak bottom-sheet'e dönüşür.",
+    "body": "Modal içeriği. ESC ile veya backdrop'a tıklayarak kapatabilirsiniz."
+  },
+  "form": {
+    "title": "Demo İlan Formu",
+    "name": "Ad",
+    "namePlaceholder": "Ali Veli",
+    "email": "E-posta",
+    "emailPlaceholder": "ornek@arsam.net",
+    "role": "Rol",
+    "rolePicker": "Seç…",
+    "roles": {
+      "buyer": "Alıcı",
+      "seller": "Satıcı",
+      "broker": "Emlakçı"
+    },
+    "bio": "Kısa açıklama",
+    "bioPlaceholder": "Kendiniz hakkında 2-3 cümle…",
+    "agree": "KVKK aydınlatma metnini okudum",
+    "subscribe": "Yeni ilanlar için bildirim al",
+    "submit": "Kaydet",
+    "successTitle": "Form gönderildi",
+    "successDescription": "Tüm alanlar mock olarak işlendi. Toast mantığı çalışıyor."
+  }
+}

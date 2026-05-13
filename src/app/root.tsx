@@ -1,5 +1,7 @@
 import { AppShell } from '@/components/layout/AppShell';
+import { Toaster } from '@/components/ui/Toast';
 import { i18n } from '@/i18n';
+import * as RadixTooltip from '@radix-ui/react-tooltip';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Suspense, useEffect, useState } from 'react';
 import { I18nextProvider } from 'react-i18next';
@@ -89,17 +91,20 @@ export default function Root() {
   return (
     <I18nextProvider i18n={i18n}>
       <QueryClientProvider client={queryClient}>
-        <AppShell>
-          <Suspense
-            fallback={
-              <div className="flex min-h-dvh items-center justify-center text-[var(--text-tertiary)]">
-                <span className="font-mono text-xs uppercase tracking-widest">Loading…</span>
-              </div>
-            }
-          >
-            <Outlet />
-          </Suspense>
-        </AppShell>
+        <RadixTooltip.Provider delayDuration={350} skipDelayDuration={150}>
+          <AppShell>
+            <Suspense
+              fallback={
+                <div className="flex min-h-dvh items-center justify-center text-[var(--text-tertiary)]">
+                  <span className="font-mono text-xs uppercase tracking-widest">Loading…</span>
+                </div>
+              }
+            >
+              <Outlet />
+            </Suspense>
+          </AppShell>
+          <Toaster />
+        </RadixTooltip.Provider>
       </QueryClientProvider>
     </I18nextProvider>
   );

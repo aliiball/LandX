@@ -53,3 +53,67 @@ export const headingRecipe = cva(
 );
 
 export type HeadingVariants = VariantProps<typeof headingRecipe>;
+
+export const textRecipe = cva('', {
+  variants: {
+    tone: {
+      primary: 'text-[var(--text-primary)]',
+      secondary: 'text-[var(--text-secondary)]',
+      tertiary: 'text-[var(--text-tertiary)]',
+      disabled: 'text-[var(--text-disabled)]',
+      cyan: 'text-[var(--accent-cyan)]',
+      violet: 'text-[var(--accent-violet)]',
+      magenta: 'text-[var(--accent-magenta)]',
+      lime: 'text-[var(--accent-lime)]',
+      amber: 'text-[var(--accent-amber)]',
+      danger: 'text-[var(--danger)]',
+    },
+    size: {
+      caption: 'text-[var(--text-caption)] uppercase tracking-[0.04em]',
+      small: 'text-[var(--text-small)]',
+      body: 'text-[var(--text-body)]',
+      lead: 'text-[var(--text-lead)]',
+    },
+    weight: {
+      normal: 'font-normal',
+      medium: 'font-medium',
+      semibold: 'font-semibold',
+    },
+    family: {
+      body: 'font-[var(--font-body)]',
+      mono: 'font-[var(--font-mono)]',
+    },
+  },
+  defaultVariants: {
+    tone: 'primary',
+    size: 'body',
+    weight: 'normal',
+    family: 'body',
+  },
+});
+
+export type TextVariants = VariantProps<typeof textRecipe>;
+
+export const surfaceRecipe = cva('border', {
+  variants: {
+    tone: {
+      void: 'bg-[var(--surface-void)] border-[var(--stroke-subtle)]',
+      obsidian: 'bg-[var(--surface-obsidian)] border-[var(--stroke-subtle)]',
+      slate: 'bg-[var(--surface-slate)] border-[var(--stroke-default)]',
+      elevated: 'bg-[var(--surface-elevated)] border-[var(--stroke-default)]',
+    },
+    radius: {
+      none: 'rounded-none',
+      sm: 'rounded-[var(--radius-sm)]',
+      md: 'rounded-[var(--radius-md)]',
+      lg: 'rounded-[var(--radius-lg)]',
+      xl: 'rounded-[var(--radius-xl)]',
+    },
+  },
+  defaultVariants: {
+    tone: 'elevated',
+    radius: 'md',
+  },
+});
+
+export type SurfaceVariants = VariantProps<typeof surfaceRecipe>;

@@ -45,13 +45,6 @@
     "enabled": true,
     "rules": {
       "recommended": true,
-      "suspicious": {
-        "noExplicitAny": "error",
-        "noConsole": {
-          "level": "warn",
-          "options": { "allow": ["warn", "error", "info"] }
-        }
-      },
       "style": {
         "noDefaultExport": "off",
         "useImportType": "error",
@@ -69,7 +62,17 @@
       "a11y": {
         "recommended": true,
         "useButtonType": "error",
-        "useKeyWithClickEvents": "error"
+        "useKeyWithClickEvents": "error",
+        "useSemanticElements": "off",
+        "noRedundantRoles": "warn"
+      },
+      "suspicious": {
+        "noExplicitAny": "error",
+        "noConsole": {
+          "level": "warn",
+          "options": { "allow": ["warn", "error", "info"] }
+        },
+        "noArrayIndexKey": "warn"
       }
     }
   },
