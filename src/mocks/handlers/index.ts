@@ -2,6 +2,7 @@ import type { PersonaKey } from '@/lib/auth/personas';
 import { PERSONA_USER_FIXTURES } from '@/mocks/seed/personas';
 import type { HttpHandler } from 'msw';
 import { http, HttpResponse, delay } from 'msw';
+import { brokerHandlers } from './broker';
 import { listingHandlers } from './listings';
 import { messagingHandlers } from './messaging';
 
@@ -24,4 +25,9 @@ const baseHandlers: HttpHandler[] = [
   }),
 ];
 
-export const handlers: HttpHandler[] = [...baseHandlers, ...listingHandlers, ...messagingHandlers];
+export const handlers: HttpHandler[] = [
+  ...baseHandlers,
+  ...listingHandlers,
+  ...messagingHandlers,
+  ...brokerHandlers,
+];

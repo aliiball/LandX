@@ -45,7 +45,20 @@ export default [
     ]),
   ]),
 
-  ...prefix('broker', [layout('broker/_layout.tsx', [index('broker/page.tsx')])]),
+  ...prefix('broker', [
+    layout('broker/_layout.tsx', [
+      index('broker/page.tsx'),
+      route('portfolio', 'broker/portfolio/page.tsx'),
+      route('leads', 'broker/leads/page.tsx'),
+      route('clients', 'broker/clients/page.tsx'),
+      route('commissions', 'broker/commissions/page.tsx'),
+      route('showcase', 'broker/showcase/page.tsx'),
+      route('team', 'broker/team/page.tsx'),
+      route('analytics', 'broker/analytics/page.tsx'),
+      route('ai-tools', 'broker/ai-tools/page.tsx'),
+      route('subscription', 'broker/subscription/page.tsx'),
+    ]),
+  ]),
 
   ...prefix('admin', [layout('admin/_layout.tsx', [index('admin/page.tsx')])]),
 
