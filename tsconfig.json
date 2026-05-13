@@ -21,9 +21,8 @@
     "noEmit": true,
     "rootDirs": [".", "./.react-router/types"],
     "types": ["vite/client", "node", "vitest/globals", "@testing-library/jest-dom"],
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [
