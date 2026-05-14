@@ -7,6 +7,47 @@ import type { Listing } from '@/types/listing';
 import { Plus, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 
+function AiCompareSummary({ listings }: { listings: ReadonlyArray<Listing> }) {
+  if (listings.length < 2) return null;
+  let bestIdx = 0;
+  let worstIdx = 0;
+  let bestScore = Number.NEGATIVE_INFINITY;
+  let worstScore = Number.POSITIVE_INFINITY;
+  for (let i = 0; i < listings.length; i += 1) {
+    const l = listings[i];
+    if (!l) continue;
+    const score = (l.verifiedDeed ? 20 : 0) + l.valuation.confidence - l.pricePerSqm / 1000;
+    if (score > bestScore) {
+      bestScore = score;
+      bestIdx = i;
+    }
+    if (score < worstScore) {
+      worstScore = score;
+      worstIdx = i;
+    }
+  }
+  const best = listings[bestIdx];
+  const worst = listings[worstIdx];
+  if (!best || !worst || best === worst) return null;
+  return (
+    <Card tone="solid">
+      <CardBody className="flex flex-wrap items-start gap-3">
+        <Badge tone="agent" size="sm" dot>
+          AI özet
+        </Badge>
+        <p className="flex-1 text-sm">
+          <span className="font-medium">{best.region.district}</span> en düşük risk profili (tapu{' '}
+          {best.verifiedDeed ? 'doğrulanmış' : 'beklemede'}, %{best.valuation.confidence} güven,
+          ₺/m² {formatNumber(best.pricePerSqm)}). En yüksek risk{' '}
+          <span className="font-medium">{worst.region.district}</span> — değerleme aralığı geniş.
+          Yatırım için <span className="text-[var(--accent-cyan)]">{best.region.district}</span>{' '}
+          önerilir.
+        </p>
+      </CardBody>
+    </Card>
+  );
+}
+
 export default function ComparePage() {
   const featured = useFeaturedListings();
   const favorites = useFavorites();
@@ -94,6 +135,8 @@ export default function ComparePage() {
           </Card>
         )}
       </div>
+
+      <AiCompareSummary listings={selectedListings} />
 
       {selectedListings.length >= 2 ? (
         <Card>

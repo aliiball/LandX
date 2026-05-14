@@ -194,6 +194,10 @@ export default function PostListingWizard() {
                   { value: 'ticari', label: 'Ticari' },
                   { value: 'tarla', label: 'Tarla' },
                   { value: 'sanayi', label: 'Sanayi' },
+                  { value: 'turizm', label: 'Turizm' },
+                  { value: 'zeytinlik', label: 'Zeytinlik (3573 sayılı kanun)' },
+                  { value: 'karma', label: 'Karma' },
+                  { value: 'imarsiz', label: 'İmarsız' },
                 ]}
                 placeholder="Seç…"
               />

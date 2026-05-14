@@ -18,6 +18,8 @@ export default [
     route('pricing', '(public)/pricing/page.tsx'),
     route('legal/:doc', '(public)/legal.$doc/page.tsx'),
     route('contact', '(public)/contact/page.tsx'),
+    route('help', '(public)/help/page.tsx'),
+    route('notifications', '(public)/notifications/page.tsx'),
     route('blog', '(public)/blog/page.tsx'),
     route('blog/:slug', '(public)/blog.$slug/page.tsx'),
     route('design', '(public)/design/page.tsx'),

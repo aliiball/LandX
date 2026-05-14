@@ -49,6 +49,39 @@ const DOCS: Record<
       },
     ],
   },
+  ai: {
+    title: 'AI Uyumluluk Beyanı',
+    sections: [
+      {
+        title: 'Kullanılan modeller',
+        body: 'Platform; Claude Opus 4.7 (1M context), Sonnet 4.6, Haiku 4.5 başta olmak üzere; GPT-5 Pro, Gemini 2.5 Pro, Llama 4 405B (self-host) ve Mistral Large 3 modellerini routing politikasıyla kullanır. Her çağrı /admin/ai-ops altında izlenebilir.',
+      },
+      {
+        title: 'AI ile karar verilen alanlar',
+        body: 'Değerleme önerisi, açıklama üretimi, fiyat tahmini, risk skoru, lead takip önerisi. Bunların hiçbiri otomatik hukuki sonuç doğurmaz; kararlar kullanıcı ile teyit edilir.',
+      },
+      {
+        title: 'KVKK & AI Act uyumu',
+        body: 'KVKK m.5/2c sözleşmenin ifası gerekçesiyle işlenen veriler; AI eğitimi için varsayılan olarak kullanılmaz. AI Act (Avrupa) high-risk sınıflandırması platformumuz için uygulanmaz çünkü kredi/sigorta/biometrik otomatik karar yoktur. DPIA /admin/compliance > GDPR Art.35 altında.',
+      },
+      {
+        title: 'Hallucination & error',
+        body: 'AI çıktıları "öneri" olarak işaretlenir. Değerleme tahmininde alt/üst sınır ve güven (%) gösterilir. Üretilen açıklama satıcı tarafından düzenlenebilir; otomatik yayına girmez.',
+      },
+      {
+        title: 'İtiraz hakkı (m.11)',
+        body: 'AI personalizasyonuna itiraz ederseniz /dashboard/profile altında "AI öneri sistemine itiraz et" kutusunu işaretleyin. Bu durumda dashboard içeriği rastgele kişiselleştirme yerine kronolojik / popülerlik bazlı sunulur.',
+      },
+      {
+        title: 'Eğitim verisi politikası',
+        body: 'Kullanıcı verisi (mesaj, ilan, KYC belgesi) hiçbir LLM sağlayıcısının eğitimi için paylaşılmaz. Anthropic, OpenAI, Google, Mistral, Meta için "do-not-train" politikası geçerlidir.',
+      },
+      {
+        title: 'Audit & izlenebilirlik',
+        body: 'Tüm AI çağrıları D01 hash-chained audit log içine yazılır. Principal "agent:<model-id>" olarak görünür ve tamper-evident zincirle korunur.',
+      },
+    ],
+  },
 };
 
 export default function LegalDocPage() {
