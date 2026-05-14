@@ -86,6 +86,10 @@ export default [
       route('tkgm', 'admin/tkgm/page.tsx'),
       route('reports', 'admin/reports/page.tsx'),
       route('reports/:section', 'admin/reports.$section/page.tsx'),
+      route('auth-security', 'admin/auth-security/page.tsx'),
+      route('observability', 'admin/observability/page.tsx'),
+      route('ai-ops', 'admin/ai-ops/page.tsx'),
+      route('agent-registry', 'admin/agent-registry/page.tsx'),
     ]),
   ]),
 
