@@ -1,8 +1,10 @@
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
+import enAdmin from './en/admin.json';
 import enCommon from './en/common.json';
 import enDesign from './en/design.json';
+import trAdmin from './tr/admin.json';
 import trCommon from './tr/common.json';
 import trDesign from './tr/design.json';
 
@@ -15,14 +17,14 @@ void i18next
   .use(initReactI18next)
   .init({
     resources: {
-      tr: { common: trCommon, design: trDesign },
-      en: { common: enCommon, design: enDesign },
+      tr: { common: trCommon, design: trDesign, admin: trAdmin },
+      en: { common: enCommon, design: enDesign, admin: enAdmin },
     },
     lng: DEFAULT_LANGUAGE,
     fallbackLng: DEFAULT_LANGUAGE,
     supportedLngs: SUPPORTED_LANGUAGES as unknown as string[],
     defaultNS: 'common',
-    ns: ['common', 'design'],
+    ns: ['common', 'design', 'admin'],
     interpolation: { escapeValue: false },
     detection: {
       order: ['querystring', 'localStorage', 'navigator'],

@@ -1,9 +1,28 @@
 // Listing domain types — used across search, detail, map, compare.
 
 export type ListingStatus = 'active' | 'pending' | 'sold' | 'paused';
-export type ZoningType = 'konut' | 'ticari' | 'tarla' | 'sanayi' | 'turizm' | 'karma';
-export type TitleDeedType = 'mustakil' | 'hisseli' | 'kat-irtifaki' | 'tapu-tahsis' | 'yok';
+export type ZoningType =
+  | 'konut'
+  | 'ticari'
+  | 'tarla'
+  | 'sanayi'
+  | 'turizm'
+  | 'zeytinlik'
+  | 'karma'
+  | 'imarsiz';
+export type TitleDeedType =
+  | 'mustakil'
+  | 'hisseli'
+  | 'kat-irtifaki'
+  | 'arsa-tapulu'
+  | 'tarla-tapulu'
+  | 'tapu-tahsis'
+  | 'yok';
 export type RoadFrontage = 'asfalt' | 'stabilize' | 'toprak' | 'yok';
+
+// TKGM kayıt durumu — 3573 sayılı kanun ve TMK m.1010/1011 ayrımı için kritik.
+export type TkgmStatus = 'temiz' | 'ipotekli' | 'serh' | 'tedbir' | 'bilinmiyor';
+export type UtilityKey = 'road' | 'electricity' | 'water' | 'gas' | 'internet' | 'sewage';
 
 export type Region = {
   city: string;
@@ -52,6 +71,10 @@ export type Listing = {
   slopePercent: number;
   ada?: string;
   parsel?: string;
+  pafta?: string;
+  hisseRatio?: number;
+  tkgmStatus?: TkgmStatus;
+  utilities?: UtilityKey[];
   imarli: boolean;
   verifiedDeed: boolean;
   hasDrone: boolean;

@@ -15,7 +15,16 @@ const PHOTO_POOL = Array.from(
   (_, i) => `https://picsum.photos/seed/arsam-${i + 1}/1200/800`,
 );
 
-const ZONING: ReadonlyArray<ZoningType> = ['konut', 'ticari', 'tarla', 'sanayi', 'turizm', 'karma'];
+const ZONING: ReadonlyArray<ZoningType> = [
+  'konut',
+  'ticari',
+  'tarla',
+  'sanayi',
+  'turizm',
+  'karma',
+  'zeytinlik',
+  'imarsiz',
+];
 const TITLE_DEED: ReadonlyArray<TitleDeedType> = [
   'mustakil',
   'mustakil',
@@ -91,6 +100,8 @@ function priceForArea(areaSqm: number, zoning: ZoningType, city: string): number
     sanayi: 1800,
     turizm: 3200,
     karma: 1100,
+    zeytinlik: 420,
+    imarsiz: 180,
   };
   const cityMultiplier = ['İstanbul', 'İzmir', 'Antalya', 'Muğla', 'Ankara'].includes(city)
     ? 1.6
@@ -234,14 +245,17 @@ export function getListingById(id: string): Listing | undefined {
 }
 
 function zoningLabel(z: ZoningType): string {
-  return {
+  const labels: Record<ZoningType, string> = {
     konut: 'konut',
     ticari: 'ticari',
     tarla: 'tarla',
     sanayi: 'sanayi',
     turizm: 'turizm',
     karma: 'karma',
-  }[z];
+    zeytinlik: 'zeytinlik',
+    imarsiz: 'imarsız',
+  };
+  return labels[z];
 }
 
 function roadLabel(r: RoadFrontage): string {
