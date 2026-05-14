@@ -1,6 +1,7 @@
 import { cn } from '@/design/recipes';
 import { Link } from 'react-router';
 import { DemoModeBadge } from './DemoModeBadge';
+import { NotificationsDrawer } from './NotificationsDrawer';
 import { PersonaSwitcher } from './PersonaSwitcher';
 
 type LayoutTopBarProps = {
@@ -46,6 +47,7 @@ export function LayoutTopBar({ surfaceLabel, envBadge = 'dev', rightSlot }: Layo
       </div>
       <div className="flex items-center gap-3">
         {rightSlot}
+        <NotificationsDrawer />
         <DemoModeBadge />
         <PersonaSwitcher />
       </div>

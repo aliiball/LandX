@@ -1,4 +1,8 @@
 import { AppShell } from '@/components/layout/AppShell';
+import { AssistantDrawer } from '@/components/layout/AssistantDrawer';
+import { CommandPalette } from '@/components/layout/CommandPalette';
+import { CompareBar } from '@/components/layout/CompareBar';
+import { OnboardingBanner } from '@/components/layout/OnboardingBanner';
 import { Toaster } from '@/components/ui/Toast';
 import { i18n } from '@/i18n';
 import * as RadixTooltip from '@radix-ui/react-tooltip';
@@ -97,6 +101,7 @@ export default function Root() {
       <QueryClientProvider client={queryClient}>
         <RadixTooltip.Provider delayDuration={350} skipDelayDuration={150}>
           <AppShell>
+            <OnboardingBanner />
             <Suspense
               fallback={
                 <div className="flex min-h-dvh items-center justify-center text-[var(--text-tertiary)]">
@@ -106,6 +111,9 @@ export default function Root() {
             >
               <Outlet />
             </Suspense>
+            <CompareBar />
+            <CommandPalette />
+            <AssistantDrawer />
           </AppShell>
           <Toaster />
         </RadixTooltip.Provider>
