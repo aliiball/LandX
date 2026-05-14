@@ -1,7 +1,7 @@
 import { type RouteConfig, index, layout, prefix, route } from '@react-router/dev/routes';
 
-// Phase 0 scaffold: each surface has its layout + a single index placeholder page.
-// Additional routes are added per phase (Phase 1+ via `/build-page <id>`).
+// Routes — RR v7 framework mode.
+// Surface map: (public), (auth), dashboard, broker, admin, agent + /b/:slug.
 
 export default [
   layout('(public)/_layout.tsx', [
@@ -81,6 +81,11 @@ export default [
       route('compliance', 'admin/compliance/page.tsx'),
       route('slo', 'admin/slo/page.tsx'),
       route('security/reviews', 'admin/security.reviews/page.tsx'),
+      route('doctype-studio', 'admin/doctype-studio/page.tsx'),
+      route('mcp', 'admin/mcp/page.tsx'),
+      route('tkgm', 'admin/tkgm/page.tsx'),
+      route('reports', 'admin/reports/page.tsx'),
+      route('reports/:section', 'admin/reports.$section/page.tsx'),
     ]),
   ]),
 
