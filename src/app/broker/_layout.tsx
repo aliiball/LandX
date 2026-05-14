@@ -12,6 +12,7 @@ const SIDEBAR_ENTRIES = [
   { to: '/broker/showcase', label: 'Vitrin' },
   { to: '/broker/team', label: 'Takım' },
   { to: '/broker/analytics', label: 'Analitik' },
+  { to: '/broker/performance', label: 'Performans' },
   { to: '/broker/ai-tools', label: 'AI Araçları' },
   { to: '/broker/subscription', label: 'Abonelik' },
 ];
